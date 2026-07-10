@@ -3,197 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto FitLife | ms-miembros</title>
+    <title>GymApp | Ecosistema de Microservicios</title>
     <style>
-        /* Estilos generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+        :root { --bg-dark: #0a0a0a; --accent-green: #39ff14; --text-light: #ffffff; --card-bg: #1a1a1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
 
-        body {
-            background-color: #f8fafc;
-            color: #333;
-        }
+        /* Hero */
+        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 4px solid var(--accent-green); }
+        h1 { font-size: 4rem; margin-bottom: 20px; color: var(--accent-green); }
+        .btn-main { background: var(--accent-green); color: #000; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
 
-        /* Sección Superior (Oscura) */
-        .hero-section {
-            background-color: #0f172a; /* Azul oscuro estilo NovaStream */
-            color: white;
-            text-align: center;
-            padding: 100px 20px 120px 20px;
-        }
+        /* Secciones */
+        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 10px; border-left: 5px solid var(--accent-green); }
 
-        .badge {
-            background-color: #1e3a8a;
-            color: #60a5fa;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            line-height: 1.6;
-        }
-
-        .btn-green {
-            background-color: #10b981; /* Botón verde */
-            color: white;
-            text-decoration: none;
-            padding: 16px 40px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
-
-        .btn-green:hover {
-            background-color: #059669;
-        }
-
-        /* Sección Inferior (Clara) */
-        .value-section {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #f1f5f9;
-        }
-
-        .value-title {
-            font-size: 2.2rem;
-            color: #0f172a;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .underline {
-            width: 60px;
-            height: 4px;
-            background-color: #2563eb;
-            margin: 0 auto 50px auto;
-            border-radius: 2px;
-        }
-
-        /* Tarjetas de Problema y Solución */
-        .cards-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            flex: 1;
-            min-width: 300px;
-            text-align: left;
-            border: 1px solid #e2e8f0;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .problem-title {
-            color: #0f172a;
-        }
-
-        .solution-title {
-            color: #0f172a;
-        }
-
-        .icon-red { color: #ef4444; font-size: 1.5rem; }
-        .icon-yellow { color: #f59e0b; font-size: 1.5rem; }
-
-        .card p {
-            color: #475569;
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        /* Pie de página */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #64748b;
-            font-size: 0.9rem;
-            background-color: #f1f5f9;
-        }
+        /* Tabla Proyecciones */
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: #1a1a1a; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
+        th { color: var(--accent-green); }
     </style>
 </head>
 <body>
-
-<!-- SECCIÓN OSCURA (Igual al ejemplo NovaStream) -->
-<header class="hero-section">
-    <div class="badge">Arquitectura de Microservicios</div>
-    <h1 class="hero-title">Proyecto ms-miembros</h1>
-    <p class="hero-subtitle">
-        El microservicio núcleo de la plataforma FitLife que centraliza la gestión de usuarios y garantiza la seguridad mediante autenticación JWT.
-    </p>
-    <!-- Este botón lleva directo a tu Swagger que arreglamos hoy -->
-    <a href="https://ms-miembros.onrender.com/doc/swagger-ui/index.html" target="_blank" class="btn-green">
-        Ver Documentación / Swagger API
-    </a>
+<header class="hero">
+    <h1>GymApp</h1>
+    <p>Arquitectura de Microservicios para la gestión integral de gimnasios.</p>
+    <a href="https://ms-miembros.onrender.com/doc/swagger-ui/index.html" class="btn-main">Explorar API ms-miembros</a>
 </header>
 
-<!-- SECCIÓN CLARA (Propuesta de Valor) -->
-<section class="value-section">
-    <h2 class="value-title">La Propuesta de Valor</h2>
-    <div class="underline"></div>
-
-    <div class="cards-container">
-        <!-- Tarjeta El Problema -->
-        <div class="card">
-            <div class="card-title problem-title">
-                <span class="icon-red">❌</span> El Problema
-            </div>
-            <p>
-                Las plataformas de gestión monolíticas tradicionales sufren problemas de rendimiento cuando la base de datos de usuarios crece. Además, carecen de métodos de autenticación robustos, exponiendo la información personal de los clientes y generando cuellos de botella al integrarse con otros módulos.
-            </p>
-        </div>
-
-        <!-- Tarjeta La Solución -->
-        <div class="card">
-            <div class="card-title solution-title">
-                <span class="icon-yellow">💡</span> La Solución
-            </div>
-            <p>
-                <strong>ms-miembros</strong> desacopla la lógica de negocio usando Spring Boot y PostgreSQL. Implementa seguridad <em>Stateless</em> con tokens JWT, lo que permite escalabilidad independiente, alta disponibilidad en la nube (Render) y una comunicación segura con los servicios de gamificación y notificaciones.
-            </p>
-        </div>
+<div class="section">
+    <h2>El Desafío Tecnológico</h2>
+    <div class="grid" style="margin-top:30px;">
+        <div class="card"><h3>Arquitectura</h3><p>Ecosistema robusto de 12 microservicios orquestados mediante API Gateway y Eureka Server.</p></div>
+        <div class="card"><h3>ms-miembros</h3><p>Servicio centralizado de gestión de usuarios, seguridad JWT y autenticación de alta disponibilidad.</p></div>
+        <div class="card"><h3>Infraestructura</h3><p>Despliegue containerizado en Docker, persistencia con MySQL y migraciones Flyway.</p></div>
     </div>
-</section>
+</div>
 
-<footer>
-    <p>Desarrollado por <strong>Constanza Cerda Bravo</strong> | Ingeniería en Informática | Duoc UC</p>
+<div class="section" style="background: #111;">
+    <h2>Distribución del Ecosistema</h2>
+    <table>
+        <tr><th>Microservicio</th><th>Rol Principal</th></tr>
+        <tr><td>ms-miembros</td><td>Gestión de Usuarios y Seguridad</td></tr>
+        <tr><td>ms-gamificacion</td><td>Puntos y niveles de usuario</td></tr>
+        <tr><td>ms-clases</td><td>Agendamiento y horarios</td></tr>
+        <tr><td>ms-rutinas</td><td>Planificación de entrenamiento</td></tr>
+    </table>
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #666;">
+    <p>Desarrollado por Constanza Cerda & Juan Carlos Alvarado | Proyecto Final GymApp</p>
 </footer>
-
 </body>
 </html>
