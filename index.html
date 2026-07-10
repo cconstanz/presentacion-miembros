@@ -2,23 +2,25 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>GymApp | La Evolución del Fitness Tecnológico</title>
+    <title>GymApp | Ecosistema Enterprise</title>
     <style>
-        :root { --bg: #0a0a0a; --green: #39ff14; --text: #e0e0e0; --card: #141414; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
-        .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; border-bottom: 4px solid var(--green); }
-        h1 { font-size: 4rem; color: var(--green); margin: 0; }
-        .btn { background: var(--green); color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 1.2rem; }
-        .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 30px; border-radius: 12px; border-left: 4px solid var(--green); border: 1px solid #333; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; }
-        th, td { padding: 15px; border: 1px solid #333; text-align: left; }
-        th { color: var(--green); background: #111; }
-        /* Contenedores de App realistas */
-        .app-showcase { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
-        .phone-mockup { width: 260px; height: 520px; background: #000; border-radius: 40px; border: 8px solid #333; position: relative; box-shadow: 0 0 30px rgba(57, 255, 20, 0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
-        .phone-mockup span { color: var(--green); font-size: 1.5rem; font-weight: bold; }
+        :root { --bg: #000510; --blue: #0047FF; --text: #ffffff; --card: #0a1128; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+
+        /* Hero con degradado azul */
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,5,16,0.8), rgba(0,5,16,0.8)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999ada6?auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 4px solid var(--blue); }
+        h1 { font-size: 4rem; color: var(--blue); margin: 0; }
+        .btn { background: var(--blue); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+
+        .section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        .card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid var(--blue); margin-bottom: 20px; }
+
+        /* Grid de App Realista */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .mockup { height: 350px; background: #111; border-radius: 25px; border: 4px solid var(--blue); display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: bold; }
+
+        /* Chatbot Estilo Neo */
+        .chatbot { position: fixed; bottom: 20px; right: 20px; background: white; color: black; padding: 15px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.5); cursor: pointer; }
     </style>
 </head>
 <body>
@@ -29,49 +31,47 @@
 </header>
 
 <div class="section">
-    <h2>Problema & Solución</h2>
-    <div class="grid">
-        <div class="card"><h3>El Problema</h3><p>Fragmentación operativa, falta de control en aforos, desmotivación de usuarios y pérdida de ingresos por mala gestión de suscripciones.</p></div>
-        <div class="card"><h3>Nuestra Solución</h3><p>Ecosistema unificado de 12 microservicios. Automatización total desde el perfil del miembro hasta la gamificación y tienda virtual.</p></div>
+    <div class="card">
+        <h2>Ecosistema de Microservicios</h2>
+        <p>GymApp integra 12 microservicios especializados para una gestión 360°[cite: 3].</p>
+        <ul>
+            <li><strong>ms-miembros:</strong> Gestión de perfiles y seguridad.</li>
+            <li><strong>ms-gamificacion:</strong> Puntos por actividad y niveles.</li>
+            <li><strong>ms-rutinas:</strong> Planes personalizados.</li>
+            <li><strong>ms-nutricion:</strong> Gestión integral de planes alimenticios.</li>
+            <li><strong>ms-evaluacion:</strong> Seguimiento de progreso con puntos acumulables.</li>
+            <li><strong>ms-tienda:</strong> Venta directa y canje de puntos.</li>
+            <li><strong>ms-suscripciones:</strong> Control de aforo y límites de clientes.</li>
+            <li><strong>ms-clases:</strong> Agendamiento según niveles de salud.</li>
+            <li><strong>ms-notificaciones:</strong> Alertas de beneficios y usuario activo.</li>
+            <li><strong>ms-entrenadores:</strong> Disponibilidad y horarios de profesores.</li>
+        </ul>
     </div>
-</div>
-
-<div class="section" id="ecosistema">
-    <h2>Ecosistema Robustos de 12 Microservicios</h2>
-    <table>
-        <tr><th>Módulo</th><th>Funcionalidades Clave</th></tr>
-        <tr><td>ms-miembros</td><td>Perfil central, gestión de seguridad y autenticación.</td></tr>
-        <tr><td>ms-gamificacion</td><td>Puntos por actividad, niveles e insignias.</td></tr>
-        <tr><td>ms-rutinas</td><td>Programas personalizados y registro de ejercicios.</td></tr>
-        <tr><td>ms-evaluacion</td><td>Tracking de progreso físico y puntos acumulables.</td></tr>
-        <tr><td>ms-tienda</td><td>Venta directa y canje de puntos por productos.</td></tr>
-        <tr><td>ms-suscripciones</td><td>Control de aforo, límites de clientes y pagos.</td></tr>
-        <tr><td>ms-clases</td><td>Agendamiento acorde a niveles de salud.</td></tr>
-        <tr><td>ms-notificaciones</td><td>Alertas push de beneficios y actividad.</td></tr>
-        <tr><td>ms-entrenadores</td><td>Disponibilidad y agendamiento docente.</td></tr>
-    </table>
 </div>
 
 <div class="section" id="inversion">
     <h2>Propuesta de Inversión</h2>
     <div class="card">
-        <h3>Ronda de Financiamiento</h3>
-        <p>Buscamos <strong>$250,000 USD</strong> para escalar nuestra solución SaaS a nivel regional.</p>
-        <p>Propuesta de valor: Transformamos la gestión tradicional en un modelo <em>data-driven</em>, aumentando la retención de usuarios en un 40% mediante gamificación y analítica avanzada.</p>
+        <h3>Financiamiento Escalable</h3>
+        <p>Buscamos $250,000 USD para expansión regional. Nuestro modelo <em>data-driven</em> aumenta la retención en un 40%[cite: 3].</p>
     </div>
 </div>
 
-<div class="section" style="text-align: center;">
-    <h2>Experiencia Móvil Realista</h2>
-    <div class="app-showcase">
-        <div class="phone-mockup"><span>Dashboard de Actividad</span></div>
-        <div class="phone-mockup"><span>Rutinas Personalizadas</span></div>
-        <div class="phone-mockup"><span>Canje de Puntos GymApp</span></div>
+<div class="section">
+    <h2>Experiencia Móvil de Alto Rendimiento</h2>
+    <div class="app-grid">
+        <div class="mockup">Dashboard de Actividad</div>
+        <div class="mockup">Rutinas de Entrenamiento</div>
+        <div class="mockup">Tienda y Canje</div>
+        <div class="mockup">Gestión de Nutrición</div>
     </div>
 </div>
+
+<!-- Chatbot Mockup -->
+<div class="chatbot">Hola! Te ayudo? 👐</div>
 
 <footer style="text-align: center; padding: 40px; color: #666;">
-    <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado[cite: 2]</p>
+    <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado[cite: 3]</p>
 </footer>
 </body>
 </html>
