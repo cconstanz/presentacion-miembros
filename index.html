@@ -2,65 +2,70 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>GymApp Enterprise | Fitness de Vanguardia</title>
+    <title>GymApp | Premium Fitness Suite</title>
     <style>
-        :root { --bg: #000510; --blue: #0047FF; --text: #ffffff; --card: #0a1128; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
+        :root {
+            --bg-nude: #fdfaf6;
+            --cream: #f5efe6;
+            --soft-gray: #d4cfc9;
+            --accent-green: #39ff14;
+            --text-dark: #2d2d2d;
+        }
+        body { background-color: var(--bg-nude); color: var(--text-dark); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
 
-        /* Hero Elegante */
-        .hero { height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,5,16,0.5), rgba(0,5,16,0.5)), url('https://i.imgur.com/kFw6kL7.jpeg');
-            background-size: cover; background-position: center; border-bottom: 4px solid var(--blue); }
-        h1 { font-size: 5rem; color: var(--blue); margin: 0; text-shadow: 0 0 30px rgba(0,71,255,0.4); }
-        .btn-main { background: var(--blue); color: white; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 30px; font-size: 1.3rem; }
+        /* Hero con imagen de pesas y ambiente premium */
+        .hero { height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            background: linear-gradient(rgba(245,239,230,0.4), rgba(245,239,230,0.4)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; border-bottom: 5px solid var(--accent-green); }
+        h1 { font-size: 5rem; color: var(--text-dark); margin: 0; }
+        .btn { background: var(--accent-green); color: black; padding: 18px 50px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 30px; }
 
-        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 40px; border-radius: 25px; border: 1px solid var(--blue); text-align: center; }
+        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .card { background: var(--cream); padding: 40px; border-radius: 30px; border: 1px solid var(--soft-gray); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        /* Sección Ecosistema */
-        .ecosystem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
-        .module { background: #000; padding: 20px; border-radius: 15px; border: 1px solid #222; font-size: 0.9rem; }
+        /* Ecosistema en tonos arena */
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+        .module { background: white; padding: 25px; border-radius: 20px; border: 1px solid var(--soft-gray); font-weight: 500; }
 
-        /* Experiencia Móvil Elegante */
-        .mobile-display { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
-        .screen { width: 240px; height: 500px; border-radius: 45px; border: 5px solid #333; background: #111; display: flex; align-items: center; justify-content: center; color: var(--blue); font-weight: bold; box-shadow: 0 0 40px rgba(0,71,255,0.2); }
+        /* Móvil elegante */
+        .mobile-showcase { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
+        .phone { width: 220px; height: 450px; background: #2d2d2d; border-radius: 40px; border: 6px solid #111; display: flex; align-items: center; justify-content: center; color: var(--accent-green); font-weight: bold; }
 
-        .chatbot { position: fixed; bottom: 30px; right: 30px; background: white; color: black; padding: 20px 25px; border-radius: 50px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); font-weight: bold; }
+        .chatbot { position: fixed; bottom: 30px; right: 30px; background: var(--accent-green); color: black; padding: 15px 25px; border-radius: 50px; font-weight: bold; }
     </style>
 </head>
 <body>
 <header class="hero">
     <h1>GymApp</h1>
     <p>Arquitectura de Microservicios para la gestión integral de gimnasios.</p>
-    <a href="#inversion" class="btn-main">Ver Propuesta de Inversión</a>
+    <a href="#inversion" class="btn">Ver Propuesta de Inversión</a>
 </header>
 
 <div class="section">
-    <div class="grid-box">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
         <div class="card"><h2>El Problema</h2><p>Fragmentación operativa, falta de control en aforos y desmotivación del usuario final[cite: 3].</p></div>
-        <div class="card"><h2>La Solución</h2><p>Ecosistema unificado de 12 microservicios para automatización total desde el perfil del miembro hasta la gamificación[cite: 3].</p></div>
+        <div class="card"><h2>La Solución</h2><p>Ecosistema unificado de 12 microservicios para automatización total, desde el perfil del miembro hasta la gamificación[cite: 3].</p></div>
     </div>
 </div>
 
 <div class="section">
     <h2>Ecosistema de Microservicios</h2>
-    <div class="ecosystem-grid">
-        <div class="module">ms-miembros: Perfil central[cite: 3]</div>
-        <div class="module">ms-gamificacion: Puntos y niveles[cite: 3]</div>
-        <div class="module">ms-rutinas: Entrenamiento personalizado[cite: 3]</div>
-        <div class="module">ms-nutricion: Planes alimenticios[cite: 3]</div>
-        <div class="module">ms-evaluacion: Progreso físico[cite: 3]</div>
-        <div class="module">ms-tienda: Canje y ventas[cite: 3]</div>
-        <div class="module">ms-suscripciones: Aforos y pagos[cite: 3]</div>
-        <div class="module">ms-clases: Agendamiento avanzado[cite: 3]</div>
-        <div class="module">ms-notificaciones: Alertas activas[cite: 3]</div>
-        <div class="module">ms-entrenadores: Horarios y disponibilidad[cite: 3]</div>
+    <div class="module-grid">
+        <div class="module">ms-miembros[cite: 3]</div>
+        <div class="module">ms-gamificacion[cite: 3]</div>
+        <div class="module">ms-rutinas[cite: 3]</div>
+        <div class="module">ms-nutricion[cite: 3]</div>
+        <div class="module">ms-evaluacion[cite: 3]</div>
+        <div class="module">ms-tienda[cite: 3]</div>
+        <div class="module">ms-suscripciones[cite: 3]</div>
+        <div class="module">ms-clases[cite: 3]</div>
+        <div class="module">ms-notificaciones[cite: 3]</div>
+        <div class="module">ms-entrenadores[cite: 3]</div>
     </div>
 </div>
 
 <div class="section" id="inversion">
-    <div class="card" style="max-width: 600px; margin: auto;">
+    <div class="card">
         <h2>Propuesta de Inversión</h2>
         <p>Buscamos <strong>$250,000 USD</strong> para escalabilidad regional. Modelo <em>data-driven</em> que incrementa la retención en un 40%[cite: 3].</p>
     </div>
@@ -68,16 +73,16 @@
 
 <div class="section" style="text-align: center;">
     <h2>Experiencia Móvil de Alto Rendimiento</h2>
-    <div class="mobile-display">
-        <div class="screen">Dashboard Activo</div>
-        <div class="screen">Rutinas Inteligentes</div>
-        <div class="screen">Gestión de Nutrición</div>
+    <div class="mobile-showcase">
+        <div class="phone">Dashboard</div>
+        <div class="phone">Rutinas</div>
+        <div class="phone">Tienda</div>
     </div>
 </div>
 
 <div class="chatbot">Hola! Te ayudo? 👐</div>
 
-<footer style="text-align: center; padding: 50px; color: #555;">
+<footer style="text-align: center; padding: 50px; color: #888;">
     <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado[cite: 3]</p>
 </footer>
 </body>
