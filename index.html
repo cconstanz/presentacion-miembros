@@ -2,58 +2,76 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymApp | Ecosistema de Microservicios</title>
+    <title>GymApp | La Evolución del Fitness Tecnológico</title>
     <style>
-        :root { --bg-dark: #0a0a0a; --accent-green: #39ff14; --text-light: #ffffff; --card-bg: #1a1a1a; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-
-        /* Hero */
-        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 4px solid var(--accent-green); }
-        h1 { font-size: 4rem; margin-bottom: 20px; color: var(--accent-green); }
-        .btn-main { background: var(--accent-green); color: #000; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
-
-        /* Secciones */
-        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 10px; border-left: 5px solid var(--accent-green); }
-
-        /* Tabla Proyecciones */
-        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: #1a1a1a; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #333; }
-        th { color: var(--accent-green); }
+        :root { --bg: #0a0a0a; --green: #39ff14; --text: #e0e0e0; --card: #141414; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; line-height: 1.6; }
+        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999ada6?auto=format&fit=crop&w=1600&q=80'); background-size: cover; border-bottom: 3px solid var(--green); }
+        h1 { font-size: 4rem; color: var(--green); margin-bottom: 10px; }
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--card); padding: 30px; border-radius: 12px; border-left: 4px solid var(--green); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #000; }
+        th, td { padding: 15px; border: 1px solid #333; text-align: left; }
+        th { color: var(--green); background: #111; }
+        .highlight { color: var(--green); font-weight: bold; }
+        .btn { display: inline-block; background: var(--green); color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; }
     </style>
 </head>
 <body>
 <header class="hero">
-    <h1>GymApp</h1>
-    <p>Arquitectura de Microservicios para la gestión integral de gimnasios.</p>
-    <a href="https://ms-miembros.onrender.com/doc/swagger-ui/index.html" class="btn-main">Explorar API ms-miembros</a>
+    <h1>GymApp Enterprise</h1>
+    <p>Solución integral de microservicios para la gestión inteligente de gimnasios.</p>
+    <a href="#proyecciones" class="btn">Ver Propuesta de Inversión</a>
 </header>
 
 <div class="section">
-    <h2>El Desafío Tecnológico</h2>
-    <div class="grid" style="margin-top:30px;">
-        <div class="card"><h3>Arquitectura</h3><p>Ecosistema robusto de 12 microservicios orquestados mediante API Gateway y Eureka Server.</p></div>
-        <div class="card"><h3>ms-miembros</h3><p>Servicio centralizado de gestión de usuarios, seguridad JWT y autenticación de alta disponibilidad.</p></div>
-        <div class="card"><h3>Infraestructura</h3><p>Despliegue containerizado en Docker, persistencia con MySQL y migraciones Flyway.</p></div>
+    <h2>Problema & Solución</h2>
+    <div class="grid">
+        <div class="card"><h3>El Problema</h3><p>Fragmentación operativa, falta de control en aforos, desmotivación de usuarios y pérdida de ingresos por mala gestión de suscripciones.</p></div>
+        <div class="card"><h3>Nuestra Solución</h3><p>Ecosistema unificado de 12 microservicios. Automatización total desde el perfil del miembro hasta la gamificación y tienda virtual.</p></div>
     </div>
 </div>
 
-<div class="section" style="background: #111;">
-    <h2>Distribución del Ecosistema</h2>
+<div class="section">
+    <h2>Ecosistema de Microservicios</h2>
     <table>
-        <tr><th>Microservicio</th><th>Rol Principal</th></tr>
-        <tr><td>ms-miembros</td><td>Gestión de Usuarios y Seguridad</td></tr>
-        <tr><td>ms-gamificacion</td><td>Puntos y niveles de usuario</td></tr>
-        <tr><td>ms-clases</td><td>Agendamiento y horarios</td></tr>
-        <tr><td>ms-rutinas</td><td>Planificación de entrenamiento</td></tr>
+        <tr><th>Módulo</th><th>Funcionalidades Clave</th></tr>
+        <tr><td>ms-miembros</td><td>Perfil central, gestión de seguridad y autenticación.</td></tr>
+        <tr><td>ms-gamificacion</td><td>Puntos por actividad, niveles de usuario e insignias de logro.</td></tr>
+        <tr><td>ms-rutinas</td><td>Programas personalizados y registro de ejercicios.</td></tr>
+        <tr><td>ms-evaluacion</td><td>Tracking de progreso físico y puntos acumulables por hitos.</td></tr>
+        <tr><td>ms-tienda</td><td>Venta directa y canje de puntos por productos.</td></tr>
+        <tr><td>ms-suscripciones</td><td>Control de aforo, límites de clientes y pagos activos.</td></tr>
+        <tr><td>ms-clases</td><td>Agendamiento acorde a perfiles de salud y niveles.</td></tr>
+        <tr><td>ms-notificaciones</td><td>Alertas push de beneficios, metas cumplidas y actividad.</td></tr>
+        <tr><td>ms-entrenadores</td><td>Gestión de disponibilidad y agendamiento docente.</td></tr>
     </table>
 </div>
 
+<div class="section" id="proyecciones">
+    <h2>Proyecciones y Financiamiento</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Ronda de Financiamiento</h3>
+            <p>Buscamos <span class="highlight">$250,000 USD</span> para escalar a nivel regional.</p>
+            <ul><li>40%: Desarrollo de nuevos módulos IA.</li><li>35%: Marketing y adquisición.</li><li>25%: Infraestructura y equipo.</li></ul>
+        </div>
+        <div class="card">
+            <h3>Propuesta de Valor</h3>
+            <p>Transformamos un gimnasio tradicional en una entidad tecnológica data-driven, aumentando la retención en un 40% mediante gamificación.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section" style="text-align: center;">
+    <h2>Experiencia Móvil de Usuario</h2>
+    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=500&q=80" alt="App Movil" style="border-radius: 20px; margin-top: 20px; box-shadow: 0 0 20px var(--green);">
+    <p style="margin-top:20px;">Lleva el control de tu salud en tu bolsillo. Seguimiento en tiempo real, catálogo de tienda y comunidad activa.</p>
+</div>
+
 <footer style="text-align: center; padding: 40px; color: #666;">
-    <p>Desarrollado por Constanza Cerda & Juan Carlos Alvarado | Proyecto Final GymApp</p>
+    <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado</p>
 </footer>
 </body>
 </html>
