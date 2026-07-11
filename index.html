@@ -4,33 +4,55 @@
     <meta charset="UTF-8">
     <title>GymApp | Enterprise Fitness</title>
     <style>
-        :root { --bg: #000; --green: #39ff14; --aqua: #00ffff; --gray: #2d2d2d; --white: #fff; }
-        body { background-color: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; margin: 0; }
+        :root { --bg: #050505; --green: #39ff14; --aqua: #00ffff; --gray: #1a1a1a; --white: #ffffff; }
+        body { background-color: var(--bg); color: var(--white); font-family: 'Inter', sans-serif; margin: 0; line-height: 1.6; }
 
         /* Navbar Contacto */
-        nav { padding: 20px 50px; display: flex; justify-content: space-between; border-bottom: 1px solid var(--gray); }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--green); }
-        .contact { color: var(--white); text-decoration: none; border: 1px solid var(--aqua); padding: 8px 20px; border-radius: 20px; }
+        nav { padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.8); }
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--green); letter-spacing: 2px; }
+        .contact { color: var(--white); text-decoration: none; border: 2px solid var(--aqua); padding: 10px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+        .contact:hover { background: var(--aqua); color: #000; box-shadow: 0 0 15px var(--aqua); }
 
         /* Hero */
         .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 4px solid var(--green); }
-        h1 { font-size: 4rem; color: var(--green); margin: 0; }
-        .btn { background: var(--aqua); color: #000; padding: 15px 40px; border-radius: 50px; font-weight: bold; margin-top: 20px; text-decoration: none; }
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1500&q=80'); background-size: cover; border-bottom: 4px solid var(--green); }
+        h1 { font-size: 4.5rem; color: var(--green); margin: 0; text-shadow: 0 0 25px rgba(57, 255, 20, 0.4); }
+        .btn { background: var(--aqua); color: #000; padding: 18px 45px; border-radius: 50px; font-weight: bold; margin-top: 25px; text-decoration: none; font-size: 1.2rem; transition: 0.3s; box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--aqua); }
 
-        /* Secciones con Iluminación */
+        /* Secciones */
         .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--gray); padding: 40px; border-radius: 20px; border: 1px solid #444; box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); transition: 0.3s; }
-        .card:hover { box-shadow: 0 0 25px var(--green); }
+        .section h2 { text-align: center; font-size: 2.5rem; color: var(--white); margin-bottom: 50px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Tarjetas con más color y glow */
+        .card {
+            background: linear-gradient(145deg, #1c1c24, #0d0d12);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-top: 4px solid var(--green);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
+            transition: all 0.4s ease;
+        }
+        .card:hover {
+            box-shadow: 0 15px 35px rgba(57, 255, 20, 0.3);
+            transform: translateY(-8px);
+            border-color: var(--green);
+        }
+        .card h2, .card h3 { color: var(--aqua); margin-top: 0; margin-bottom: 15px; font-size: 1.5rem; }
+        .card p { color: #cccccc; font-size: 1.1rem; }
 
         /* Ecosistema Detallado */
-        .grid-ecosystem { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .grid-ecosystem { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         /* Móvil Pro */
-        .phone-display { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
-        .phone { width: 200px; height: 400px; background: #111; border-radius: 30px; border: 4px solid var(--green); display: flex; align-items: center; justify-content: center; color: var(--aqua); }
+        .phone-display { display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap; }
+        .phone { width: 220px; height: 450px; background: #0a0a0a; border-radius: 35px; border: 6px solid #222; display: flex; align-items: center; justify-content: center; color: var(--green); font-weight: bold; font-size: 1.2rem; box-shadow: 0 0 30px rgba(57, 255, 20, 0.2); transition: 0.3s; }
+        .phone:hover { border-color: var(--green); box-shadow: 0 0 40px rgba(57, 255, 20, 0.5); transform: translateY(-10px); }
 
-        .chatbot { position: fixed; bottom: 30px; right: 30px; background: white; color: black; padding: 15px 20px; border-radius: 20px; box-shadow: 0 0 10px var(--aqua); }
+        /* Chatbot */
+        .chatbot { position: fixed; bottom: 30px; right: 30px; background: var(--white); color: #000; padding: 18px 25px; border-radius: 30px; box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4); font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; border: 2px solid var(--aqua); }
+        .chatbot:hover { background: var(--aqua); transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -41,42 +63,49 @@
 
 <header class="hero">
     <h1>GymApp</h1>
-    <p>Arquitectura de Microservicios para gestión integral de gimnasios[cite: 3].</p>
+    <p style="font-size: 1.3rem; margin-top: 10px;">Arquitectura de Microservicios para gestión integral de gimnasios.</p>
     <a href="#inversion" class="btn">VER PROPUESTA</a>
 </header>
 
 <div class="section">
     <h2>Problema & Solución</h2>
     <div class="grid-ecosystem">
-        <div class="card"><h3>El Problema</h3><p>Fragmentación operativa y falta de control de aforos[cite: 3].</p></div>
-        <div class="card"><h3>La Solución</h3><p>Ecosistema unificado de 12 microservicios para automatización total[cite: 3].</p></div>
+        <div class="card">
+            <h3>El Problema</h3>
+            <p>Fragmentación operativa, falta de control en aforos, desmotivación de usuarios y pérdida de ingresos por mala gestión de suscripciones.</p>
+        </div>
+        <div class="card">
+            <h3>La Solución</h3>
+            <p>Ecosistema unificado de 12 microservicios. Automatización total desde el perfil del miembro hasta la gamificación y tienda virtual.</p>
+        </div>
     </div>
 </div>
 
 <div class="section">
     <h2>Ecosistema de Microservicios</h2>
     <div class="grid-ecosystem">
-        <div class="card"><h3>ms-miembros</h3><p>Perfil central, seguridad JWT y autenticación[cite: 3].</p></div>
-        <div class="card"><h3>ms-gamificacion</h3><p>Sistema de puntos, niveles y retos[cite: 3].</p></div>
-        <div class="card"><h3>ms-rutinas</h3><p>Programación de ejercicios a medida[cite: 3].</p></div>
-        <div class="card"><h3>ms-nutricion</h3><p>Planes alimenticios integrados[cite: 3].</p></div>
-        <div class="card"><h3>ms-evaluacion</h3><p>Tracking de progreso y métricas[cite: 3].</p></div>
-        <div class="card"><h3>ms-tienda</h3><p>Canje de puntos y ventas directas[cite: 3].</p></div>
-        <div class="card"><h3>ms-suscripciones</h3><p>Gestión de pagos y aforos[cite: 3].</p></div>
-        <div class="card"><h3>ms-clases</h3><p>Agendamiento según niveles[cite: 3].</p></div>
-        <div class="card"><h3>ms-notificaciones</h3><p>Alertas y mensajería activa[cite: 3].</p></div>
-        <div class="card"><h3>ms-entrenadores</h3><p>Disponibilidad docente[cite: 3].</p></div>
+        <div class="card"><h3>ms-miembros</h3><p>Perfil central, seguridad JWT y autenticación de alta disponibilidad.</p></div>
+        <div class="card"><h3>ms-gamificacion</h3><p>Sistema de puntos por actividad, niveles de usuario e insignias de logro.</p></div>
+        <div class="card"><h3>ms-rutinas</h3><p>Programación de ejercicios a medida y planes de entrenamiento personalizados.</p></div>
+        <div class="card"><h3>ms-nutricion</h3><p>Gestión integral de planes alimenticios y seguimiento calórico.</p></div>
+        <div class="card"><h3>ms-evaluacion</h3><p>Tracking de progreso físico, métricas y puntos acumulables por hitos.</p></div>
+        <div class="card"><h3>ms-tienda</h3><p>Marketplace para canje de puntos acumulados y ventas directas de productos.</p></div>
+        <div class="card"><h3>ms-suscripciones</h3><p>Control exacto de aforo, límites de clientes por recinto y pagos activos.</p></div>
+        <div class="card"><h3>ms-clases</h3><p>Agendamiento inteligente acorde a perfiles de salud y niveles de integración.</p></div>
+        <div class="card"><h3>ms-notificaciones</h3><p>Alertas push de beneficios, metas cumplidas y status de usuario activo.</p></div>
+        <div class="card"><h3>ms-entrenadores</h3><p>Gestión en tiempo real de disponibilidad, turnos y agendamiento docente.</p></div>
     </div>
 </div>
 
 <div class="section" id="inversion">
-    <div class="card">
+    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
         <h2>Propuesta de Inversión</h2>
-        <p>Buscamos <strong>$250,000 USD</strong>. Incremento de 40% en retención mediante gamificación[cite: 3].</p>
+        <p style="font-size: 1.3rem;">Buscamos <strong>$250,000 USD</strong> para escalar a nivel regional.</p>
+        <p>Nuestra propuesta de valor transforma un gimnasio tradicional en una entidad tecnológica <em>data-driven</em>, aumentando la retención en un 40% mediante nuestro sistema de gamificación.</p>
     </div>
 </div>
 
-<div class="section" style="text-align: center;">
+<div class="section">
     <h2>Experiencia Móvil</h2>
     <div class="phone-display">
         <div class="phone">App Dashboard</div>
@@ -87,8 +116,8 @@
 
 <div class="chatbot">Hola! Te ayudo? 👐</div>
 
-<footer style="text-align: center; padding: 40px; color: #666;">
-    <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado[cite: 3]</p>
+<footer style="text-align: center; padding: 50px 20px; color: #666; border-top: 1px solid #222;">
+    <p>GymApp Enterprise | Desarrollado por Constanza Cerda & Juan Carlos Alvarado</p>
 </footer>
 </body>
 </html>
